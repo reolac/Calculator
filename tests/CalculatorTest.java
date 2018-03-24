@@ -42,7 +42,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void meanNumber_singleNumber_returnsNumber() {
+    public void getMean_singleNumber_returnsNumber() {
         Calculator calculator = new Calculator();
 
         calculator.addNumber(1);
@@ -51,7 +51,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void meanNumber_multiNumbers_returnDouble() {
+    public void getMean_multiNumbers_returnDouble() {
         Calculator calculator = new Calculator();
 
         calculator.addNumber(1);
@@ -62,7 +62,17 @@ public class CalculatorTest {
     }
 
     @Test
-    public void medianNumber_singleNumber_returnsNumber() {
+    public void getMean_multiDouble_returnDouble() {
+        Calculator calculator = new Calculator();
+
+        calculator.addNumber(0.5);
+        calculator.addNumber(1);
+
+        assertEquals(0.75, calculator.getMean(), 0.01d);
+    }
+
+    @Test
+    public void getMedian_singleNumber_returnsNumber() {
         Calculator calculator = new Calculator();
 
         calculator.addNumber(1);
@@ -71,7 +81,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void medianNumber_multiNumbersOrdered_returnsNumber() {
+    public void getMedian_multiNumbersOrdered_returnsNumber() {
         Calculator calculator = new Calculator();
 
         calculator.addNumber(1);
@@ -82,7 +92,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void medianNumber_multiNumbersUnordered_returns() {
+    public void getMedian_multiNumbersUnordered_returnsNumber() {
         Calculator calculator = new Calculator();
 
         calculator.addNumber(1);
