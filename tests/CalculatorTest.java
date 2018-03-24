@@ -101,4 +101,24 @@ public class CalculatorTest {
 
         assertEquals(2, calculator.getMedian(), 0.01d);
     }
+
+    @Test
+    public void getMedian_multiNumbersEvenAmount_returnsDouble() {
+        Calculator calculator = new Calculator();
+
+        calculator.addNumber(1);
+        calculator.addNumber(2);
+
+        assertEquals(1.5, calculator.getMedian(), 0.01d);
+    }
+
+    @Test
+    public void evenNumber_evenNumber_returnsBoolean() {
+        assertEquals(true, BooleanExtensions.isEvenNumber(0));
+    }
+
+    @Test
+    public void evenNumber_oddNumber_returnsBoolean() {
+        assertEquals(false, BooleanExtensions.isEvenNumber(1));
+    }
 }

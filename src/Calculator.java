@@ -6,11 +6,11 @@ public class Calculator {
     private ArrayList<Double> numbers = new ArrayList<>();
 
     private int getNumberOfNumbers() {
-        return numbers.size();
+        return this.numbers.size();
     }
 
     public double getSum() {
-        return numbers.stream().mapToDouble(Double::doubleValue).sum();
+        return this.numbers.stream().mapToDouble(Double::doubleValue).sum();
     }
 
     public double getMean() {
@@ -18,11 +18,17 @@ public class Calculator {
     }
 
     public double getMedian() {
-        sort(numbers);
-        return numbers.get(getNumberOfNumbers() / 2);
+        int numberOfWords = getNumberOfNumbers();
+
+        if (BooleanExtensions.isEvenNumber(numberOfWords)) {
+            return getMean();
+        } else {
+            sort(this.numbers);
+            return this.numbers.get(numberOfWords / 2);
+        }
     }
 
     public void addNumber(double number) {
-        numbers.add(number);
+        this.numbers.add(number);
     }
 }
