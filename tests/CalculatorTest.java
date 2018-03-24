@@ -71,12 +71,23 @@ public class CalculatorTest {
     }
 
     @Test
-    public void medianNumber_multiNumbers_returnsNumber() {
+    public void medianNumber_multiNumbersOrdered_returnsNumber() {
         Calculator calculator = new Calculator();
 
         calculator.addNumber(1);
         calculator.addNumber(2);
         calculator.addNumber(3);
+
+        assertEquals(2, calculator.getMedian(), 0.01d);
+    }
+
+    @Test
+    public void medianNumber_multiNumbersUnordered_returns() {
+        Calculator calculator = new Calculator();
+
+        calculator.addNumber(1);
+        calculator.addNumber(3);
+        calculator.addNumber(2);
 
         assertEquals(2, calculator.getMedian(), 0.01d);
     }

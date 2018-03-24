@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import static java.util.Collections.*;
 
 public class Calculator {
 
@@ -17,6 +18,7 @@ public class Calculator {
     }
 
     public double getMedian() {
+        sort(numbers);
         return numbers.get(getNumberOfNumbers() / 2);
     }
 
