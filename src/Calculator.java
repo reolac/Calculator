@@ -1,12 +1,26 @@
+import java.util.ArrayList;
+
 public class Calculator {
 
-    private int sum;
+    private ArrayList<Double> numbers = new ArrayList<>();
 
-    public int getSum() {
-        return sum;
+    private int getNumberOfNumbers() {
+        return numbers.size();
     }
 
-    public void addNumber(int number) {
-        sum = sum + number;
+    public double getSum() {
+        return numbers.stream().mapToDouble(Double::doubleValue).sum();
+    }
+
+    public double getMean() {
+        return getSum() / getNumberOfNumbers();
+    }
+
+    public double getMedian() {
+        return numbers.get(getNumberOfNumbers() / 2);
+    }
+
+    public void addNumber(double number) {
+        numbers.add(number);
     }
 }
