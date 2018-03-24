@@ -1,5 +1,6 @@
 import java.util.ArrayList;
-import static java.util.Collections.*;
+
+import static java.util.Collections.sort;
 
 public class Calculator {
 
