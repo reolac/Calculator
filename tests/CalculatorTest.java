@@ -97,8 +97,8 @@ public class CalculatorTest {
         Calculator calculator = new Calculator();
 
         calculator.addNumber(1);
-        calculator.addNumber(3);
         calculator.addNumber(2);
+        calculator.addNumber(3);
 
         assertEquals(2, calculator.getMedian(), 0.01d);
     }
